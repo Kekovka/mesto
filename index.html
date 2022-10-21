@@ -24,43 +24,45 @@
                     <img class="profile__avatar" src="./images/profile_avatar.jpg" alt="Аватарка">
                     <div class="profile__person">
                         <h1 class="profile__person-name">Жак-Ив Кусто</h1>
-                        <div class="profile__person-edit"></div>
-                        <h2 class="profile__person-job">Исследователь океана</h2>
+                        <button class="profile__person-edit" aria-label="Редактировать профиль"></button>
+                        <p class="profile__person-job">Исследователь океана</p>
                     </div>
-                    <div class="profile__button-add"></div>
+                    <button class="profile__button-add" aria-label="Добавить"></button>
                 </section>
 
                 <section class="places">
-                    <div class="place">
-                        <img class="place__photo" src="./images/place_1.jpg" alt="Иллюстрация">
-                        <p class="place__review">Шиханы</p>
-                        <div class="place__button"></div>
-                    </div>
-                    <div class="place">
-                        <img class="place__photo" src="./images/place_2.jpg" alt="Иллюстрация">
-                        <p class="place__review">Кунгурская пещера</p>
-                        <div class="place__button"></div>
-                    </div>
-                    <div class="place">
-                        <img class="place__photo" src="./images/place_3.jpg" alt="Иллюстрация">
-                        <p class="place__review">Чусовая</p>
-                        <div class="place__button"></div>
-                    </div>
-                    <div class="place">
-                        <img class="place__photo" src="./images/place_4.jpg" alt="Иллюстрация">
-                        <p class="place__review">Гора Эльбрус</p>
-                        <div class="place__button"></div>
-                    </div>
-                    <div class="place">
-                        <img class="place__photo" src="./images/place_5.jpg" alt="Иллюстрация">
-                        <p class="place__review">Домбай</p>
-                        <div class="place__button"></div>
-                    </div>
-                    <div class="place">
-                        <img class="place__photo" src="./images/place_6.jpg" alt="Иллюстрация">
-                        <p class="place__review">Карачаево-Черкесия</p>
-                        <div class="place__button"></div>
-                    </div>
+                    <ul class="places__list">
+                        <li class="place">
+                            <img class="place__photo" src="./images/place_1.jpg" alt="Иллюстрация">
+                            <h2 class="place__review">Шиханы</h2>
+                            <button class="place__button" aria-label="Лайк"></button>
+                        </li>
+                        <li class="place">
+                            <img class="place__photo" src="./images/place_2.jpg" alt="Иллюстрация">
+                            <h2 class="place__review">Кунгурская пещера</h2>
+                            <button class="place__button" aria-label="Лайк"></button>
+                        </li>
+                        <li class="place">
+                            <img class="place__photo" src="./images/place_3.jpg" alt="Иллюстрация">
+                            <h2 class="place__review">Чусовая</h2>
+                            <button class="place__button" aria-label="Лайк"></button>
+                        </li>
+                        <li class="place">
+                            <img class="place__photo" src="./images/place_4.jpg" alt="Иллюстрация">
+                            <h2 class="place__review">Гора Эльбрус</h2>
+                            <button class="place__button" aria-label="Лайк"></button>
+                        </li>
+                        <li class="place">
+                            <img class="place__photo" src="./images/place_5.jpg" alt="Иллюстрация">
+                            <h2 class="place__review">Домбай</h2>
+                            <button class="place__button" aria-label="Лайк"></button>
+                        </li>
+                         <li class="place">
+                            <img class="place__photo" src="./images/place_6.jpg" alt="Иллюстрация">
+                            <h2 class="place__review">Карачаево-Черкесия</h2>
+                            <button class="place__button" aria-label="Лайк"></button>
+                        </li>
+                    </ul>
                 </section>
             </main>
 
@@ -71,11 +73,11 @@
         </div>
         <div class="popup">
             <div class="popup__container">
-                <div class="popup__close"></div>
+                <button class="popup__close" aria-label="Закрыть"></button>
                 <h2 class="popup__header">Редактировать профиль</h2>
                 <form class="popup__form form">
                     <input type="text" placeholder="Имя" class="popup__person-name form__input" value="">
-                    <input type="text" placeholder="Описание" class="popup__person-job form__input">
+                    <input type="text" placeholder="Профессия" class="popup__person-job form__input">
                     <button type="submit" class="popup__submit">Сохранить</button>
                 </form>
             </div>

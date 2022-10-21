@@ -12,10 +12,6 @@ let closeButton = document.querySelector('.popup__close')
 inputName.setAttribute('value', profileName.textContent);
 inputDescription.setAttribute('value', profilejob.textContent);
 
-
-let submitButton = document.querySelector('.popup__submit');
-
-
 function popupShow() {
     popup.classList.add('popup_opened');
 }

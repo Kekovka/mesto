@@ -8,7 +8,8 @@
     right: -40px;
     top: -40px;
     opacity: 1;
-    transition: .9s linear;
+    background-color: transparent;
+    border: none;
 }
 
 .popup__close:hover {
@@ -16,7 +17,7 @@
     transition: .4s linear;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 600px) {
     .popup__close {
         width: 20px;
         height: 20px;
