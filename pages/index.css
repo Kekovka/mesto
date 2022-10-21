@@ -1,0 +1,45 @@
+/*! Основные стили страницы */
+@import url(../vendor/normalize.css);
+@import url(../blocks/body/body.css);
+@import url(../blocks/page.css);
+@import url(../blocks/main/main.css);
+
+/* ! Подключаем шрифт INTER */
+@import url(../fonts/Inter/inter.css);
+
+/*! Стили блока header */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+/*! Стили блока form */
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__close/form__close.css);
+
+/*! Стили блока profile */
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__person/profile__person.css);
+@import url(../blocks/profile/__person-name/profile__person-name.css);
+@import url(../blocks/profile/__person-job/profile__person-job.css);
+@import url(../blocks/profile/__person-edit/profile__person-edit.css);
+@import url(../blocks/profile/__button-add/profile__button-add.css);
+
+/*! Стили блоков places и place */
+@import url(../blocks/places/places.css);
+@import url(../blocks/place/place.css);
+@import url(../blocks/place/__photo/place__photo.css);
+@import url(../blocks/place/__review/place__review.css);
+@import url(../blocks/place/__button/place__button.css);
+
+/*! Стили блока footer */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
+/*! Стили блока popup */
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__header/popup__header.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__submit/popup__submit.css);
+@import url(../blocks/popup/_opened/popup_opened.css);

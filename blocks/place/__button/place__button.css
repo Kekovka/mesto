@@ -1,0 +1,19 @@
+.place__button {
+    margin: 0;
+    padding: 0 20px 0 0;
+    width: 22px;
+    height: 19px;
+    background-image: url(../../../images/like.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    grid-column: 2/3;
+    align-self: center;
+    justify-self: end;
+    opacity: 1;
+    transition: .9s linear;
+}
+
+.place__button:hover {
+    opacity: .6;
+    transition: .4s linear;
+}

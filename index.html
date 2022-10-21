@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content=" ">
+        <meta name="keywords" content=" ">
+        <meta name="author" content="Артем Чеколаев">
+        <link rel="stylesheet" href="./pages/index.css">
+        <title>Mesto</title>
+    </head>
+
+    <body class="body">
+        <div class="page">
+            <header class="header">
+                <img class="header__logo" src="./images/logo.svg" alt="Лого">
+            </header>
+
+            <main class="main">
+
+                <section class="profile">
+                    <img class="profile__avatar" src="./images/profile_avatar.jpg" alt="Аватарка">
+                    <div class="profile__person">
+                        <p class="profile__person-name">Жак-Ив Кусто</p>
+                        <div class="profile__person-edit"></div>
+                        <p class="profile__person-job">Исследователь океана</p>
+                    </div>
+                    <div class="profile__button-add"></div>
+                </section>
+
+                <section class="places">
+                    <div class="place">
+                        <img class="place__photo" src="./images/place_1.jpg" alt="Иллюстрация">
+                        <p class="place__review">Шиханы</p>
+                        <div class="place__button"></div>
+                    </div>
+                    <div class="place">
+                        <img class="place__photo" src="./images/place_2.jpg" alt="Иллюстрация">
+                        <p class="place__review">Кунгурская пещера</p>
+                        <div class="place__button"></div>
+                    </div>
+                    <div class="place">
+                        <img class="place__photo" src="./images/place_3.jpg" alt="Иллюстрация">
+                        <p class="place__review">Чусовая</p>
+                        <div class="place__button"></div>
+                    </div>
+                    <div class="place">
+                        <img class="place__photo" src="./images/place_4.jpg" alt="Иллюстрация">
+                        <p class="place__review">Гора Эльбрус</p>
+                        <div class="place__button"></div>
+                    </div>
+                    <div class="place">
+                        <img class="place__photo" src="./images/place_5.jpg" alt="Иллюстрация">
+                        <p class="place__review">Домбай</p>
+                        <div class="place__button"></div>
+                    </div>
+                    <div class="place">
+                        <img class="place__photo" src="./images/place_6.jpg" alt="Иллюстрация">
+                        <p class="place__review">Карачаево-Черкесия</p>
+                        <div class="place__button"></div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <p class="footer__copyright">© 2022 Mesto Russia</p>
+            </footer>
+
+        </div>
+        <div class="popup">
+            <div class="popup__container">
+                <div class="form__close"></div>
+                <p class="popup__header">Редактировать профиль</p>
+                <form class="popup__form form">
+                    <input type="text" placeholder="Имя" class="popup__person-name form__input" value="">
+                    <input type="text" placeholder="Описание" class="popup__person-job form__input">
+                    <button type="submit" class="popup__submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+        <script src="./scripts/script.js"></script>
+    </body>
+</html>
