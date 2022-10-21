@@ -31,7 +31,7 @@
 @media (max-width: 400px) {
     .profile__person-edit {
         width: 18px;
-        height: 18px;
+        padding-top: 16px;
         margin-top: 7.5px;
         align-self: baseline;
     }
