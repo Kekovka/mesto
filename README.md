@@ -9,7 +9,7 @@
 
 **Github pages**
 
-* [Ссылка Github pages]()
+* [Ссылка Github pages](https://kekovka.github.io/mesto/index.html)
 
 **Технологии, примененные в данной работе**
 
