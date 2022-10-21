@@ -7,7 +7,7 @@ let inputName = popupForm.querySelector('.popup__person-name');
 let inputDescription = popupForm.querySelector('.popup__person-job');
 
 let editButton = document.querySelector('.profile__person-edit');
-let closeButton = document.querySelector('.form__close')
+let closeButton = document.querySelector('.popup__close')
 
 inputName.setAttribute('value', profileName.textContent);
 inputDescription.setAttribute('value', profilejob.textContent);

@@ -1,4 +1,4 @@
-.form__close {
+.popup__close {
     width: 32px;
     height: 32px;
     background-image: url(../../../images/close_icon.svg);
@@ -11,13 +11,13 @@
     transition: .9s linear;
 }
 
-.form__close:hover {
+.popup__close:hover {
     opacity: .6;
     transition: .4s linear;
 }
 
 @media (max-width: 540px) {
-    .form__close {
+    .popup__close {
         width: 20px;
         height: 20px;
         right: 0px;
