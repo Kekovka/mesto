@@ -1,7 +1,6 @@
-.place__button {
+.place__btn-like {
     margin: 0 20px 0 0;
-    padding: 19px 0 0 0;
-    width: 22px;
+    padding: 19px 22px 0 0;
     background-image: url(../../../images/like.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -14,7 +13,7 @@
     border: none;
 }
 
-.place__button:hover {
+.place__btn-like:hover {
     opacity: .6;
     transition: .4s linear;
 }

@@ -7,4 +7,5 @@
     display: grid;
     grid-template-columns: 210px 1fr;
     grid-template-rows: 282px 80px;
+    position: relative;
 }

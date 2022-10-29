@@ -1,0 +1,20 @@
+.popup__illustration-close {
+    right: -40px;
+    top: -40px;
+}
+
+
+@media (max-width: 890px) {
+    .popup__illustration-close {
+        right: 40px;
+        top: -48px;
+    }
+}
+
+@media (max-width: 500px) {
+    .popup__illustration-close {
+        top: -36px;
+        width: 20px;
+        height: 20px;
+    }
+}
