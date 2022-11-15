@@ -1,42 +1,43 @@
-let profileName = document.querySelector('.profile__person-name');
-let profilejob = document.querySelector('.profile__person-job');
+const profileName = document.querySelector('.profile__person-name');
+const profilejob = document.querySelector('.profile__person-job');
 
-let popup = document.querySelector('.popup');
-let popupForm = popup.querySelector('.popup__form');
-let popupAdd = document.querySelector('.popup__add');
-let popupEdit = document.querySelector('.popup__edit');
+const popup = document.querySelector('.popup');
+const popupForm = popup.querySelector('.popup__form');
+const popupAdd = document.querySelector('.popup__add');
+const popupEdit = document.querySelector('.popup__edit');
 
-let inputName = popupForm.querySelector('.popup__input-name');
-let inputDescription = popupForm.querySelector('.popup__input-job');
 
-let editButton = document.querySelector('.profile__person-edit');
-let addButton = document.querySelector('.profile__button-add');
+const editButton = document.querySelector('.profile__person-edit');
+const addButton = document.querySelector('.profile__button-add');
+
+const inputName = popupForm.querySelector('.popup__input-name');
+const inputDescription = popupForm.querySelector('.popup__input-job');
 
 inputName.setAttribute('value', profileName.textContent);
 inputDescription.setAttribute('value', profilejob.textContent);
 
-function popupEditShow() {
+function showPopupEdit() {
     popupEdit.classList.add('popup_opened');
 }
 
-function popupAddShow() {
+function showPopupAdd() {
     popupAdd.classList.add('popup_opened');
 }
 
-function popupClose() {
+function closePopup() {
     let popupOpened = document.querySelector('.popup_opened');
     popupOpened.classList.remove('popup_opened');
 }
 
 //Добавляем слушатель для методом открытия поп-апов редактирования профиля и добавление карточки места
 
-editButton.addEventListener('click', popupEditShow);
-addButton.addEventListener('click', popupAddShow);
+editButton.addEventListener('click', showPopupEdit);
+addButton.addEventListener('click', showPopupAdd);
 
 //Добавляем функцию закрытия кнопке поп-апа
 
-let editClose = popup.querySelector('.popup__close').addEventListener('click', popupClose);
-let addClose = popupAdd.querySelector('.popup__close').addEventListener('click', popupClose);
+const editClose = popup.querySelector('.popup__close').addEventListener('click', closePopup);
+const addClose = popupAdd.querySelector('.popup__close').addEventListener('click', closePopup);
 
 //Меняем данные профиля
 
@@ -46,7 +47,7 @@ function editSubmit(evt) {
     profileName.textContent = inputName.value;
     profilejob.textContent = inputDescription.value;
 
-    popupClose();
+    closePopup();
 }
 
 popupForm.addEventListener('submit', editSubmit);
@@ -127,13 +128,13 @@ initialCards.forEach(function (item) {
         imgElem.querySelector('.popup__figure-img').src = placePhoto.src;
         imgElem.querySelector('.popup__figure-label').textContent = placeReview.textContent;
 
-        const popupClose = imgElem.querySelector('.popup__close');
+        const closePopup = imgElem.querySelector('.popup__close');
 
         function removeNode() {
             imgElemPopup.remove();
         };
 
-        popupClose.addEventListener('click', function () {
+        closePopup.addEventListener('click', function () {
             imgElemPopup.classList.remove('popup_opened');
             setTimeout(removeNode, 900);
         });
@@ -187,13 +188,13 @@ function placeAddSubmit(evt) {
 
         setTimeout(showElem, 50);
 
-        const popupClose = imgElem.querySelector('.popup__close');
+        const closePopup = imgElem.querySelector('.popup__close');
 
         function removeNode() {
             imgElemPopup.remove();
         };
 
-        popupClose.addEventListener('click', function () {
+        closePopup.addEventListener('click', function () {
             imgElemPopup.classList.remove('popup_opened');
             setTimeout(removeNode, 900);
         });
@@ -205,7 +206,7 @@ function placeAddSubmit(evt) {
 
     places.prepend(placeElem);
 
-    popupClose();
+    closePopup();
     placeReviewInput.value = '';
     placePhotoInput.value = '';
 };
