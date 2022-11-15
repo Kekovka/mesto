@@ -3,8 +3,8 @@ const profilejob = document.querySelector('.profile__person-job');
 
 const popup = document.querySelector('.popup');
 const popupForm = popup.querySelector('.popup__form');
-const popupAdd = document.querySelector('.popup__add');
-const popupEdit = document.querySelector('.popup__edit');
+const popupAdd = document.querySelector('.popup_add');
+const popupEdit = document.querySelector('.popup_edit');
 
 
 const editButton = document.querySelector('.profile__person-edit');
