@@ -26,6 +26,12 @@ const placeTemplate = document.querySelector('#place').content;
 //Функция открывания Поп-апа
 function showPopup(popup) {
     popup.classList.add('popup_opened');
+
+    window.addEventListener('keydown', function (evt) {
+        if(evt.key === 'Escape') {
+            closePopup(popup);
+        };
+    });
 };
 
 //Функция закрытия Поп-апа
