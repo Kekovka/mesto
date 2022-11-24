@@ -49,25 +49,35 @@
             </footer>
 
         </div>
+
+        
         <div class="popup popup_edit">
             <div class="popup__container">
                 <button class="popup__close popup__close-inputs popup__edit-close" aria-label="Закрыть"></button>
                 <h2 class="popup__header">Редактировать профиль</h2>
-                <form class="popup__form popup__form-edit">
-                    <input type="text" placeholder="Имя" class="popup__input-name popup__input" required>
-                    <input type="text" placeholder="Профессия" class="popup__input-job popup__input" required>
+                <form class="popup__form popup__form-edit form" novalidate>
+                    <input type="text" id="name-input" class="popup__input-name popup__input" placeholder="Имя" minlength ="2" maxlength ="40" required>
+                    <span class="popup__input-error name-input-error"></span>
+                    <input type="text" id="job-input" class="popup__input-job popup__input" placeholder="Профессия" minlength ="2" maxlength ="200" required>
+                    <span class="popup__input-error job-input-error"></span>
                     <button type="submit" class="popup__submit" aria-label="Сохранить">Сохранить</button>
                 </form>
             </div>
         </div>
+
+
+
+
         <div class="popup popup_add">
             <div class="popup__container">
                 <button class="popup__close popup__close-inputs popup__add-close" aria-label="Закрыть"></button>
                 <h2 class="popup__header">Новое место</h2>
-                <form class="popup__form popup__form-add">
-                    <input type="text" placeholder="Название" class="popup__input popup__place-name" required>
-                    <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__place-photo" required>
-                    <button type="submit" class="popup__submit" aria-label="Сохранить">Сохранить</button>
+                <form class="popup__form popup__form-add" novalidate>
+                    <input type="text" id="placename-input" class="popup__input popup__place-name" placeholder="Название" minlength ="2" maxlength ="30" required >
+                    <span class="popup__input-error placename-input-error"></span>
+                    <input type="url" id="placephoto-input" class="popup__input popup__place-photo" placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error placephoto-input-error"></span>
+                    <button type="submit" class="popup__submit" aria-label="Сохранить">Создать</button>
                 </form>
             </div>
         </div>
@@ -78,7 +88,7 @@
                 <figcaption class="popup__figure-label"></figcaption>
             </figure>
         </div>
-
+        <script src="./scripts/validate.js"></script>
         <script src="./scripts/cards.js"></script>
         <script src="./scripts/index.js"></script>
     </body>

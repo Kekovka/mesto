@@ -15,7 +15,7 @@ const buttonPopupAddCardClose = document.querySelector('.popup__add-close');
 const buttonPopupIllustrationClose = document.querySelector('.popup__illustration-close');
 
 const inputName = popupFormEditProfile.querySelector('.popup__input-name');
-const inputDescription = popupFormEditProfile.querySelector('.popup__input-job');
+const inputJob = popupFormEditProfile.querySelector('.popup__input-job');
 
 const placePhotoInput = document.querySelector('.popup__place-photo');
 const placeReviewInput = document.querySelector('.popup__place-name');
@@ -38,7 +38,7 @@ function handleSubmitEditProfile(evt) {
     evt.preventDefault();
 
     profileName.textContent = inputName.value;
-    profilejob.textContent = inputDescription.value;
+    profilejob.textContent = inputJob.value;
 
     closePopup(popupEditProfile);
 };
@@ -102,7 +102,7 @@ buttonAddCardOpen.addEventListener('click', () => showPopup(popupAddCard));
 buttonEditProfileOpen.addEventListener('click', () => { 
     showPopup(popupEditProfile); 
     inputName.value = profileName.textContent; 
-    inputDescription.value = profilejob.textContent; 
+    inputJob.value = profilejob.textContent; 
 }); 
 
 //События для закрытия поп-апов
