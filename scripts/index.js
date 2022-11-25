@@ -23,20 +23,28 @@ const placesContainer = document.querySelector('.places__list');
 const placeTemplate = document.querySelector('#place').content;
 
 
+function closePopupHandler(evt) {
+    const popupOpened = document.querySelector('.popup_opened');
+
+    if (popupOpened && evt.target === popupOpened || evt.key === 'Escape') {
+        closePopup(popupOpened);
+    };
+};
+
 //Функция открывания Поп-апа
 function showPopup(popup) {
     popup.classList.add('popup_opened');
 
-    window.addEventListener('keydown', function (evt) {
-        if(evt.key === 'Escape') {
-            closePopup(popup);
-        };
-    });
+    popup.addEventListener('click', closePopupHandler);
+    document.addEventListener('keydown', closePopupHandler);
 };
 
 //Функция закрытия Поп-апа
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+
+    popup.removeEventListener('click', closePopupHandler);
+    document.removeEventListener('keydown', closePopupHandler);
 };
 
 //Функция редактирования данных профиля
@@ -50,13 +58,13 @@ function handleSubmitEditProfile(evt) {
 };
 
 //Функция создания карточки
-function createCard (cardData) {
+function createCard(cardData) {
     const placeElem = placeTemplate.cloneNode(true);
     const placeElemReview = placeElem.querySelector('.place__review');
     const placeElemPhoto = placeElem.querySelector('.place__photo');
     const placeButtonLike = placeElem.querySelector('.place__btn-like');
     const placeButtonDelete = placeElem.querySelector('.place__btn-trash');
-    
+
     cardData = {
         title: cardData.name || placeReviewInput.value,
         src: cardData.link || placePhotoInput.value,
@@ -79,7 +87,7 @@ function renderCard(cardData) {
 };
 
 //Функция окрытия модального окна просмотра фотографии
-function showIllustrationPopup (cardData) {
+function showIllustrationPopup(cardData) {
     showPopup(popupIllustration);
 
     popupIllustration.querySelector('.popup__figure-label').textContent = cardData.title;
@@ -96,7 +104,7 @@ function handleSubmitPlaceAdd(evt) {
 
     renderCard(evt);
     closePopup(popupAddCard);
-    
+
     document.querySelector('.popup__form-add').reset();
 };
 
@@ -105,11 +113,11 @@ function handleSubmitPlaceAdd(evt) {
 buttonAddCardOpen.addEventListener('click', () => showPopup(popupAddCard));
 
 //Cобытие открытия окна редактирования профиля 
-buttonEditProfileOpen.addEventListener('click', () => { 
-    showPopup(popupEditProfile); 
-    inputName.value = profileName.textContent; 
-    inputJob.value = profilejob.textContent; 
-}); 
+buttonEditProfileOpen.addEventListener('click', () => {
+    showPopup(popupEditProfile);
+    inputName.value = profileName.textContent;
+    inputJob.value = profilejob.textContent;
+});
 
 //События для закрытия поп-апов
 buttonPopupEditProfileClose.addEventListener('click', () => closePopup(popupEditProfile));

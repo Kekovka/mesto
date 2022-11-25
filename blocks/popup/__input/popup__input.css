@@ -7,5 +7,11 @@
     line-height: 121%;
     outline: none;
     width: 100%;
-    position: relative;
+}
+
+.popup__input:focus {
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 0px 0px 3px rgba(149, 202, 236, 0.44);
+    -moz-box-shadow: 0px 0px 0px 3px rgba(149, 202, 236, 0.44);
+    box-shadow: 0px 0px 0px 3px rgba(149, 202, 236, 0.44);
 }
