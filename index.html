@@ -29,7 +29,7 @@
                     <button class="profile__button-add" aria-label="Добавить"></button>
                 </section>
 
-                <section class="places">
+                <section class="places" aria-label="Секция Places">
                     <ul class="places__list">
                         <template id="place">
                             <li class="place">
@@ -52,7 +52,7 @@
             <div class="popup__container">
                 <button class="popup__close popup__close-inputs popup__edit-close" aria-label="Закрыть"></button>
                 <h2 class="popup__header">Редактировать профиль</h2>
-                <div class="popup__form popup__form-edit form" novalidate>
+                <form class="popup__form popup__form-edit form" novalidate>
                     <div class="popup__input-unit">
                         <input type="text" id="name-input" class="popup__input-name popup__input" placeholder="Имя"
                             minlength="2" maxlength="40" required>
@@ -64,8 +64,7 @@
                         <span class="popup__input-error job-input-error"></span>
                     </div>
                     <button type="submit" class="popup__submit" aria-label="Сохранить">Сохранить</button>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
         <div class="popup popup_add">
@@ -84,7 +83,7 @@
                         <span class="popup__input-error placephoto-input-error"></span>
                     </div>
                     <button type="submit" class="popup__submit popup__submit_inactive" aria-label="Сохранить"
-                        disabled="true">Создать</button>
+                        disabled>Создать</button>
                 </form>
             </div>
         </div>
