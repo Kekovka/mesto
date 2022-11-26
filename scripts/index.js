@@ -26,6 +26,11 @@ const placeReviewInput = document.querySelector('.popup__place-name');
 const placesContainer = document.querySelector('.places__list');
 const placeTemplate = document.querySelector('#place').content;
 
+const inactiveButtonData = {
+    interectiveElemClass: 'interective',
+    inactiveButtonClass: 'popup__submit_inactive',
+};
+
 
 function closePopupOverlayHandler(evt) {
     if (evt.target === evt.currentTarget) {
@@ -111,11 +116,11 @@ function handleSubmitPlaceAdd(evt) {
 
     renderCard(evt);
     closePopup(popupAddCard);
-
-    disableFormButton(buttonSubmitAddCard, validationData);
+   
+    disableFormButton(buttonSubmitAddCard, inactiveButtonData);
     popupFormAddCard.reset(); 
+    
 };
-
 
 //Событие для открытия окна редактирования карточки
 buttonAddCardOpen.addEventListener('click', () => showPopup(popupAddCard));

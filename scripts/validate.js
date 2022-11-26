@@ -29,22 +29,22 @@ const checkInputValidity = (formElement, inputElement, validationData) => {
 };
 
 const enableFormButton = (buttonElement, validationData) => {
-  buttonElement.classList.remove(validationData.interectiveElemClass);
-  buttonElement.classList.add(validationData.inactiveButtonClass);
-  buttonElement.disabled = true;
-};
-
-const disableFormButton = (buttonElement, validationData) => {
   buttonElement.classList.add(validationData.interectiveElemClass);
   buttonElement.classList.remove(validationData.inactiveButtonClass);
   buttonElement.disabled = false;
 };
 
+const disableFormButton = (buttonElement, validationData) => {
+  buttonElement.classList.remove(validationData.interectiveElemClass);
+  buttonElement.classList.add(validationData.inactiveButtonClass);
+  buttonElement.disabled = true;
+};
+
 const toggleButtonState = (inputList, buttonElement, validationData) => {
   if (hasInvalidInput(inputList)) {
-    enableFormButton(buttonElement, validationData);
-  } else {
     disableFormButton(buttonElement, validationData);
+  } else {
+    enableFormButton(buttonElement, validationData);
   };
 };
 
