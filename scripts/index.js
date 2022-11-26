@@ -26,16 +26,10 @@ const placeReviewInput = document.querySelector('.popup__place-name');
 const placesContainer = document.querySelector('.places__list');
 const placeTemplate = document.querySelector('#place').content;
 
-const inactiveButtonData = {
-    interectiveElemClass: 'interective',
-    inactiveButtonClass: 'popup__submit_inactive',
-};
-
 
 function closePopupOverlayHandler(evt) {
     if (evt.target === evt.currentTarget) {
-        const popupOpened = document.querySelector('.popup_opened');
-        closePopup(popupOpened);
+        closePopup(evt.currentTarget);
     };
 };
 
@@ -80,9 +74,9 @@ function createCard(cardData) {
     const placeButtonLike = placeElem.querySelector('.place__btn-like');
     const placeButtonDelete = placeElem.querySelector('.place__btn-trash');
 
-    placeElemReview.textContent = cardData.title;
-    placeElemPhoto.alt = cardData.title;
-    placeElemPhoto.src = cardData.src;
+    placeElemReview.textContent = cardData.name;
+    placeElemPhoto.alt = cardData.name;
+    placeElemPhoto.src = cardData.link;
 
     placeButtonLike.addEventListener('click', (evt) => evt.target.classList.toggle('place__btn-like_active'));
     placeButtonDelete.addEventListener('click', () => placeButtonDelete.closest('.place').remove());
@@ -92,19 +86,16 @@ function createCard(cardData) {
 
 //Функция рендера карточкиs
 function renderCard(cardData) {
-    placesContainer.prepend(createCard({
-        title: cardData.name || placeReviewInput.value,
-        src: cardData.link || placePhotoInput.value,
-    }));
+    placesContainer.prepend(createCard(cardData));
 };
 
 //Функция окрытия модального окна просмотра фотографии
 function showIllustrationPopup(cardData) {
     showPopup(popupIllustration);
 
-    popupIllustrationLabel.textContent = cardData.title;
-    popupIllustrationImg.alt = cardData.title;
-    popupIllustrationImg.src = cardData.src;
+    popupIllustrationLabel.textContent = cardData.name;
+    popupIllustrationImg.alt = cardData.name;
+    popupIllustrationImg.src = cardData.link;
 };
 
 //Рендер карточек из коробки | массив с карточками находится в файле cards.js
@@ -114,12 +105,14 @@ initialCards.forEach(renderCard);
 function handleSubmitPlaceAdd(evt) {
     evt.preventDefault();
 
-    renderCard(evt);
+    renderCard({
+        name: placeReviewInput.value,
+        link: placePhotoInput.value,
+    });
     closePopup(popupAddCard);
-   
-    disableFormButton(buttonSubmitAddCard, inactiveButtonData);
-    popupFormAddCard.reset(); 
-    
+
+    disableFormButton(buttonSubmitAddCard, validationData);
+    popupFormAddCard.reset();
 };
 
 //Событие для открытия окна редактирования карточки

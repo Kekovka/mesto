@@ -1,3 +1,12 @@
+const validationData = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit',
+  inactiveButtonClass: 'popup__submit_inactive',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active',
+};
+
 const showInputError = (formElement, inputElement, errorMessage, validationData) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
 
@@ -29,13 +38,11 @@ const checkInputValidity = (formElement, inputElement, validationData) => {
 };
 
 const enableFormButton = (buttonElement, validationData) => {
-  buttonElement.classList.add(validationData.interectiveElemClass);
   buttonElement.classList.remove(validationData.inactiveButtonClass);
   buttonElement.disabled = false;
 };
 
 const disableFormButton = (buttonElement, validationData) => {
-  buttonElement.classList.remove(validationData.interectiveElemClass);
   buttonElement.classList.add(validationData.inactiveButtonClass);
   buttonElement.disabled = true;
 };
@@ -68,12 +75,4 @@ const enableValidation = (validationData) => {
   });
 };
 
-enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_inactive',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_active',
-  interectiveElemClass: 'interective'
-});
+enableValidation(validationData);

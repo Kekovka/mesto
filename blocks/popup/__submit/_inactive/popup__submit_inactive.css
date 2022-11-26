@@ -7,4 +7,5 @@
 
 .popup__submit_inactive:hover {
     opacity: .3;
+    cursor: not-allowed;
 }
