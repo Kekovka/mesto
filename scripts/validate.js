@@ -28,13 +28,23 @@ const checkInputValidity = (formElement, inputElement, validationData) => {
   };
 };
 
+const enableFormButton = (buttonElement, validationData) => {
+  buttonElement.classList.remove(validationData.interectiveElemClass);
+  buttonElement.classList.add(validationData.inactiveButtonClass);
+  buttonElement.disabled = true;
+};
+
+const disableFormButton = (buttonElement, validationData) => {
+  buttonElement.classList.add(validationData.interectiveElemClass);
+  buttonElement.classList.remove(validationData.inactiveButtonClass);
+  buttonElement.disabled = false;
+};
+
 const toggleButtonState = (inputList, buttonElement, validationData) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(validationData.inactiveButtonClass);
-    buttonElement.disabled = true;
+    enableFormButton(buttonElement, validationData);
   } else {
-    buttonElement.classList.remove(validationData.inactiveButtonClass);
-    buttonElement.disabled = false;
+    disableFormButton(buttonElement, validationData);
   };
 };
 
@@ -64,5 +74,6 @@ enableValidation({
   submitButtonSelector: '.popup__submit',
   inactiveButtonClass: 'popup__submit_inactive',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_active'
+  errorClass: 'popup__input-error_active',
+  interectiveElemClass: 'interective'
 });

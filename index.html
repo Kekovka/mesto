@@ -23,20 +23,20 @@
                     <img class="profile__avatar" src="./images/profile_avatar.jpg" alt="Аватарка">
                     <div class="profile__person">
                         <h1 class="profile__person-name">Жак-Ив Кусто</h1>
-                        <button class="profile__person-edit" aria-label="Редактировать профиль"></button>
+                        <button class="profile__person-edit interective" aria-label="Редактировать профиль"></button>
                         <p class="profile__person-job">Исследователь океана</p>
                     </div>
-                    <button class="profile__button-add" aria-label="Добавить"></button>
+                    <button class="profile__button-add interective" aria-label="Добавить"></button>
                 </section>
 
                 <section class="places" aria-label="Секция Places">
                     <ul class="places__list">
                         <template id="place">
                             <li class="place">
-                                <img class="place__photo" src="." alt=".">
-                                <button class="place__btn-trash" aria-label="Удалить"></button>
+                                <img class="place__photo interective" src="#" alt=" ">
+                                <button class="place__btn-trash interective" aria-label="Удалить"></button>
                                 <h2 class="place__review"></h2>
-                                <button class="place__btn-like" aria-label="Лайк"></button>
+                                <button class="place__btn-like interective" aria-label="Лайк"></button>
                             </li>
                         </template>
                     </ul>
@@ -50,7 +50,8 @@
         </div>
         <div class="popup popup_edit">
             <div class="popup__container">
-                <button class="popup__close popup__close-inputs popup__edit-close" aria-label="Закрыть"></button>
+                <button class="popup__close popup__close-inputs popup__edit-close interective"
+                    aria-label="Закрыть"></button>
                 <h2 class="popup__header">Редактировать профиль</h2>
                 <form class="popup__form popup__form-edit form" novalidate>
                     <div class="popup__input-unit">
@@ -63,13 +64,14 @@
                             minlength="2" maxlength="200" required>
                         <span class="popup__input-error job-input-error"></span>
                     </div>
-                    <button type="submit" class="popup__submit" aria-label="Сохранить">Сохранить</button>
+                    <button type="submit" class="popup__submit interective" aria-label="Сохранить">Сохранить</button>
                 </form>
             </div>
         </div>
         <div class="popup popup_add">
             <div class="popup__container">
-                <button class="popup__close popup__close-inputs popup__add-close" aria-label="Закрыть"></button>
+                <button class="popup__close popup__close-inputs popup__add-close interective"
+                    aria-label="Закрыть"></button>
                 <h2 class="popup__header">Новое место</h2>
                 <form class="popup__form popup__form-add" novalidate>
                     <div class="popup__input-unit">
@@ -82,20 +84,20 @@
                             placeholder="Ссылка на картинку" required>
                         <span class="popup__input-error placephoto-input-error"></span>
                     </div>
-                    <button type="submit" class="popup__submit popup__submit_inactive" aria-label="Сохранить"
-                        disabled>Создать</button>
+                    <button type="submit" class="popup__submit popup__submit_type_add-card popup__submit_inactive"
+                        aria-label="Сохранить" disabled>Создать</button>
                 </form>
             </div>
         </div>
         <div class="popup popup_illustation">
             <figure class="popup__figure">
-                <button class="popup__close popup__illustration-close" aria-label="Закрыть"></button>
-                <img src="." alt="." class="popup__figure-img">
+                <button class="popup__close popup__illustration-close interective" aria-label="Закрыть"></button>
+                <img src="#" alt=" " class="popup__figure-img">
                 <figcaption class="popup__figure-label"></figcaption>
             </figure>
         </div>
-        <script src="./scripts/validate.js"></script>
-        <script src="./scripts/cards.js"></script>
-        <script src="./scripts/index.js"></script>
+        <script defer src="./scripts/validate.js"></script>
+        <script defer src="./scripts/cards.js"></script>
+        <script defer src="./scripts/index.js"></script>
     </body>
 </html>
