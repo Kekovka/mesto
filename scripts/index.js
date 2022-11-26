@@ -112,10 +112,8 @@ function handleSubmitPlaceAdd(evt) {
     renderCard(evt);
     closePopup(popupAddCard);
 
-    popupFormAddCard.reset();
-    buttonSubmitAddCard.classList.add('popup__submit_inactive');
-    buttonSubmitAddCard.classList.remove('interective');
-    buttonSubmitAddCard.disabled = true;
+    disableFormButton(buttonSubmitAddCard, validationData);
+    popupFormAddCard.reset(); 
 };
 
 
