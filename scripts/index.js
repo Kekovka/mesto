@@ -1,3 +1,5 @@
+import {initialCards} from './defcards.js';
+
 const profileName = document.querySelector('.profile__person-name');
 const profilejob = document.querySelector('.profile__person-job');
 
