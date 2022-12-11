@@ -56,12 +56,12 @@
                 <form class="popup__form popup__form-edit form" novalidate>
                     <div class="popup__input-unit">
                         <input type="text" id="name-input" class="popup__input-name popup__input" placeholder="Имя"
-                            minlength="2" maxlength="40" required>
+                            minlength="2" maxlength="40" autocomplete="off" required>
                         <span class="popup__input-error name-input-error"></span>
                     </div>
                     <div class="popup__input-unit">
                         <input type="text" id="job-input" class="popup__input-job popup__input" placeholder="Профессия"
-                            minlength="2" maxlength="200" required>
+                            minlength="2" maxlength="200" autocomplete="off" required>
                         <span class="popup__input-error job-input-error"></span>
                     </div>
                     <button type="submit" class="popup__submit interective" aria-label="Сохранить">Сохранить</button>
@@ -76,12 +76,12 @@
                 <form class="popup__form popup__form-add" novalidate>
                     <div class="popup__input-unit">
                         <input type="text" id="placename-input" class="popup__input popup__place-name"
-                            placeholder="Название" minlength="2" maxlength="30" required>
+                            placeholder="Название" minlength="2" maxlength="30" autocomplete="off" required>
                         <span class="popup__input-error placename-input-error"></span>
                     </div>
                     <div class="popup__input-unit">
                         <input type="url" id="placephoto-input" class="popup__input popup__place-photo"
-                            placeholder="Ссылка на картинку" required>
+                            placeholder="Ссылка на картинку" autocomplete="off" required>
                         <span class="popup__input-error placephoto-input-error"></span>
                     </div>
                     <button type="submit"
@@ -97,9 +97,9 @@
                 <figcaption class="popup__figure-label"></figcaption>
             </figure>
         </div>
-        <script defer type="module" src="./scripts/FormValidator.js"></script>
-        <script defer type="module" src="./scripts/cards.js"></script>
-        <script defer type="module" src="./scripts/Card.js"></script>
-        <script defer type="module" src="./scripts/index.js"></script>
+        <script defer type="module" src="./modules/defaultCards.js"></script>
+        <script defer type="module" src="./modules/index.js"></script>
+        <script defer type="module" src="./modules/FormValidator.js"></script>
+        <script defer type="module" src="./modules/Card.js"></script>
     </body>
 </html>

@@ -17,6 +17,9 @@ Update 2
 * Валидация форм
 * Закрытие поп-апов клавишей 'Escape' и нажатием на оверлей
 
+Update 3
+* Js код разделен на модули с использованием классов
+
 **Github pages**
 
 * [Ссылка Github pages](https://kekovka.github.io/mesto/index.html)

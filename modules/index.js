@@ -1,17 +1,16 @@
-import {initialCards} from './defcards.js';
+import { initialCards } from './defaultCards.js';
+import Card from './Card.js'
+import FormValidation from './FormValidation.js';
+// import { validationData, enableValidation } from './FormValidator.js'
 
 const profileName = document.querySelector('.profile__person-name');
 const profilejob = document.querySelector('.profile__person-job');
 
 const popupAddCard = document.querySelector('.popup_add');
 const popupEditProfile = document.querySelector('.popup_edit');
-const popupIllustration = document.querySelector('.popup_illustation');
 
 const popupFormEditProfile = document.querySelector('.popup__form-edit');
 const popupFormAddCard = document.querySelector('.popup__form-add');
-
-const popupIllustrationImg = document.querySelector('.popup__figure-img');
-const popupIllustrationLabel = document.querySelector('.popup__figure-label');
 
 const buttonEditProfileOpen = document.querySelector('.profile__person-edit');
 const buttonPopupEditProfileClose = document.querySelector('.popup__edit-close')
@@ -26,7 +25,21 @@ const inputJob = popupFormEditProfile.querySelector('.popup__input-job');
 const placePhotoInput = document.querySelector('.popup__place-photo');
 const placeReviewInput = document.querySelector('.popup__place-name');
 const placesContainer = document.querySelector('.places__list');
-const placeTemplate = document.querySelector('#place').content;
+
+const popupIllustrationImg = document.querySelector('.popup__figure-img');
+const popupIllustrationLabel = document.querySelector('.popup__figure-label');
+const popupIllustration = document.querySelector('.popup_illustation');
+
+const validationData = {
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__submit',
+    inactiveButtonClass: 'popup__submit_inactive',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_active',
+};
+
+const PlaceAddForm = new FormValidation(validationData, '.popup__form-add');
+const ProfileEditForm = new FormValidation(validationData, '.popup__form-edit');
 
 
 function closePopupOverlayHandler(evt) {
@@ -68,59 +81,35 @@ function handleSubmitEditProfile(evt) {
     closePopup(popupEditProfile);
 };
 
-//Функция создания карточки
-function createCard(cardData) {
-    const placeElem = placeTemplate.cloneNode(true);
-    const placeElemReview = placeElem.querySelector('.place__review');
-    const placeElemPhoto = placeElem.querySelector('.place__photo');
-    const placeButtonLike = placeElem.querySelector('.place__btn-like');
-    const placeButtonDelete = placeElem.querySelector('.place__btn-trash');
+function renderCard(Data) {
+    const newCard = new Card(Data, '#place');
+    const createdCard = newCard.createCardElem();
+    placesContainer.prepend(createdCard);
+}
 
-    placeElemReview.textContent = cardData.name;
-    placeElemPhoto.alt = cardData.name;
-    placeElemPhoto.src = cardData.link;
+initialCards.forEach((item) => {
+    renderCard(item);
+})
 
-    placeButtonLike.addEventListener('click', (evt) => evt.target.classList.toggle('place__btn-like_active'));
-    placeButtonDelete.addEventListener('click', () => placeButtonDelete.closest('.place').remove());
-    placeElemPhoto.addEventListener('click', () => showIllustrationPopup(cardData));
-    return placeElem;
-};
-
-//Функция рендера карточкиs
-function renderCard(cardData) {
-    placesContainer.prepend(createCard(cardData));
-};
-
-//Функция окрытия модального окна просмотра фотографии
-function showIllustrationPopup(cardData) {
-    showPopup(popupIllustration);
-
-    popupIllustrationLabel.textContent = cardData.name;
-    popupIllustrationImg.alt = cardData.name;
-    popupIllustrationImg.src = cardData.link;
-};
-
-//Рендер карточек из коробки | массив с карточками находится в файле cards.js
-initialCards.forEach(renderCard);
-
-//Рендер карточек из формы
+// Рендер карточек из формы
 function handleSubmitPlaceAdd(evt) {
     evt.preventDefault();
 
     renderCard({
-        name: placeReviewInput.value,
+        title: placeReviewInput.value,
         link: placePhotoInput.value,
-    });
+    }, '#place');
+
     closePopup(popupAddCard);
 
-    disableFormButton(buttonSubmitAddCard, validationData);
+    PlaceAddForm.disableFormButton();
     popupFormAddCard.reset();
 };
 
-//Событие для открытия окна редактирования карточки
+// Событие для открытия окна редактирования карточки
 buttonAddCardOpen.addEventListener('click', () => showPopup(popupAddCard));
 
-//Cобытие открытия окна редактирования профиля 
+//Cобытие открытия окна редактирования профиля
 buttonEditProfileOpen.addEventListener('click', () => {
     showPopup(popupEditProfile);
     inputName.value = profileName.textContent;
@@ -135,3 +124,8 @@ buttonPopupIllustrationClose.addEventListener('click', () => closePopup(popupIll
 //События сабмита форм редактирования и добавление карточки
 popupFormEditProfile.addEventListener('submit', handleSubmitEditProfile);
 popupFormAddCard.addEventListener('submit', handleSubmitPlaceAdd);
+
+PlaceAddForm.enableValidation();
+ProfileEditForm.enableValidation();
+
+export { popupIllustrationImg, popupIllustrationLabel, popupIllustration, showPopup }
