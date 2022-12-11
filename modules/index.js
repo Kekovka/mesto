@@ -1,7 +1,6 @@
 import { initialCards } from './defaultCards.js';
 import Card from './Card.js'
 import FormValidation from './FormValidation.js';
-// import { validationData, enableValidation } from './FormValidator.js'
 
 const profileName = document.querySelector('.profile__person-name');
 const profilejob = document.querySelector('.profile__person-job');
