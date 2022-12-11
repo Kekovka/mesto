@@ -37,8 +37,8 @@ const validationData = {
     errorClass: 'popup__input-error_active',
 };
 
-const PlaceAddForm = new FormValidation(validationData, '.popup__form-add');
-const ProfileEditForm = new FormValidation(validationData, '.popup__form-edit');
+const placeAddValidatedForm = new FormValidation(validationData, popupFormAddCard);
+const profileEditValidatedForm = new FormValidation(validationData, popupFormEditProfile);
 
 
 function closePopupOverlayHandler(evt) {
@@ -83,6 +83,7 @@ function handleSubmitEditProfile(evt) {
 function renderCard(Data) {
     const newCard = new Card(Data, '#place');
     const createdCard = newCard.createCardElem();
+
     placesContainer.prepend(createdCard);
 }
 
@@ -101,7 +102,7 @@ function handleSubmitPlaceAdd(evt) {
 
     closePopup(popupAddCard);
 
-    PlaceAddForm.disableFormButton();
+    placeAddValidatedForm.disableFormButton();
     popupFormAddCard.reset();
 };
 
@@ -124,7 +125,7 @@ buttonPopupIllustrationClose.addEventListener('click', () => closePopup(popupIll
 popupFormEditProfile.addEventListener('submit', handleSubmitEditProfile);
 popupFormAddCard.addEventListener('submit', handleSubmitPlaceAdd);
 
-PlaceAddForm.enableValidation();
-ProfileEditForm.enableValidation();
+placeAddValidatedForm.enableValidation();
+profileEditValidatedForm.enableValidation();
 
 export { popupIllustrationImg, popupIllustrationLabel, popupIllustration, showPopup }

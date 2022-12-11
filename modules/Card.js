@@ -1,12 +1,12 @@
 import { showPopup, popupIllustrationImg, popupIllustrationLabel, popupIllustration } from './index.js'
 
 export default class Card {
-	constructor(cardData, TemplateElem) {
+	constructor(cardData, templateSelector) {
 		this._title = cardData.title;
 		this._alt = cardData.title;
 		this._imgSrc = cardData.link;
 
-		this._TemplateElem = TemplateElem;
+		this._TemplateElem = templateSelector;
 	};
 
 	_createTemplateElem() {
@@ -16,6 +16,10 @@ export default class Card {
 
 	_setEventListeners() {
 		this._cardElem.querySelector('.place__photo').addEventListener('click', () => {
+
+			popupIllustrationLabel.textContent = this._title;
+			popupIllustrationImg.alt = this._title;
+			popupIllustrationImg.src = this._imgSrc;
 			showPopup(popupIllustration);
 		});
 
@@ -33,10 +37,6 @@ export default class Card {
 		this._cardElem.querySelector('.place__review').textContent = this._title;
 		cardElemPhoto.alt = this._title;
 		cardElemPhoto.src = this._imgSrc;
-
-		popupIllustrationLabel.textContent = this._title;
-		popupIllustrationImg.alt = this._title;
-		popupIllustrationImg.src = this._imgSrc;
 
 		this._setEventListeners();
 
