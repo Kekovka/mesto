@@ -1,7 +1,7 @@
 .popup__form {
     padding-top: 49px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     max-height: 230px;
 }
 
