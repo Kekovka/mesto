@@ -13,13 +13,13 @@
     overflow: hidden;
 }
 
-@media (max-width: 510px) {
+@media (max-width: 590px) {
     .profile__person-job {
         text-align: center;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
     .profile__person-job {
         font-size: .875rem;
         line-height: 121%;

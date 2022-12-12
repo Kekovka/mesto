@@ -17,7 +17,7 @@
     transition: .4s linear;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 735px) {
     .profile__button-add {
         margin-top: 36px;
         width: 100%;
@@ -26,7 +26,7 @@
     }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 590px) {
     .profile__button-add {
         margin-top: 36px;
         width: 100%;
@@ -36,7 +36,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
     .profile__button-add {
         width: 278px;
     }

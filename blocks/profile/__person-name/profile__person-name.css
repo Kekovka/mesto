@@ -13,9 +13,16 @@
     overflow: hidden;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 885px) {
+    .profile__person-name {
+        max-width: 330px;
+    }
+}
+
+@media (max-width: 460px) {
     .profile__person-name {
         font-size: 1.687rem;
         line-height: 122%;
+        max-width: 230px;
     }
 }

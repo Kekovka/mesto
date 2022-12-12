@@ -11,7 +11,7 @@
     }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 735px) {
     .profile {
         grid-template-columns: max-content max-content;
         justify-content: center;
@@ -19,7 +19,7 @@
     }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 590px) {
     .profile {
         grid-template-columns: min-content;
         grid-template-rows: min-content min-content min-content;

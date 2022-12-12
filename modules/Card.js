@@ -14,29 +14,43 @@ export default class Card {
 		return placeTemplateElem;
 	};
 
+	_fillIllustrationPopup() {
+		popupIllustrationLabel.textContent = this._title;
+		popupIllustrationImg.alt = this._title;
+		popupIllustrationImg.src = this._imgSrc;
+		showPopup(popupIllustration);
+	};
+
+	_likeCard() { 
+		this._buttonLike.classList.toggle('place__btn-like_active'); 
+	};
+
+	_deleteCard(evt) {
+		evt.target.closest('.place').remove();
+		this._cardElem = null;
+	};
+
 	_setEventListeners() {
-		this._cardElem.querySelector('.place__photo').addEventListener('click', () => {
-
-			popupIllustrationLabel.textContent = this._title;
-			popupIllustrationImg.alt = this._title;
-			popupIllustrationImg.src = this._imgSrc;
-			showPopup(popupIllustration);
+		this._cardImage.addEventListener('click', (evt) => {
+			this._fillIllustrationPopup();
 		});
-
-		this._cardElem.querySelector('.place__btn-like').addEventListener('click', (evt) =>
-			evt.target.classList.toggle('place__btn-like_active'));
-
-		this._cardElem.querySelector('.place__btn-trash').addEventListener('click', (evt) =>
-			evt.target.closest('.place').remove());
+		this._buttonLike.addEventListener('click', (evt) => { 
+			this._likeCard();
+	    });
+	   this._buttonDelete.addEventListener('click', (evt) => {
+			this._deleteCard(evt);
+	    });
 	};
 
 	createCardElem() {
 		this._cardElem = this._createTemplateElem();
-		const cardElemPhoto = this._cardElem.querySelector('.place__photo');
+		this._cardImage = this._cardElem.querySelector('.place__photo');
+		this._buttonLike = this._cardElem.querySelector('.place__btn-like');
+		this._buttonDelete = this._cardElem.querySelector('.place__btn-trash');
 
 		this._cardElem.querySelector('.place__review').textContent = this._title;
-		cardElemPhoto.alt = this._title;
-		cardElemPhoto.src = this._imgSrc;
+		this._cardImage.alt = this._title;
+		this._cardImage.src = this._imgSrc;
 
 		this._setEventListeners();
 

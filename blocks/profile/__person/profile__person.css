@@ -8,7 +8,7 @@
     align-self: center;
 }
 
-@media (max-width: 510px) {
+@media (max-width: 590px) {
     .profile__person {
         padding: 22px 0 0 28px;
         grid-template-rows: 2/3;

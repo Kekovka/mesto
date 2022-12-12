@@ -12,11 +12,7 @@ const popupFormEditProfile = document.querySelector('.popup__form-edit');
 const popupFormAddCard = document.querySelector('.popup__form-add');
 
 const buttonEditProfileOpen = document.querySelector('.profile__person-edit');
-const buttonPopupEditProfileClose = document.querySelector('.popup__edit-close')
 const buttonAddCardOpen = document.querySelector('.profile__button-add');
-const buttonPopupAddCardClose = document.querySelector('.popup__add-close');
-const buttonPopupIllustrationClose = document.querySelector('.popup__illustration-close');
-const buttonSubmitAddCard = document.querySelector('.popup__submit_type_add-card');
 
 const inputName = popupFormEditProfile.querySelector('.popup__input-name');
 const inputJob = popupFormEditProfile.querySelector('.popup__input-job');
@@ -42,7 +38,7 @@ const profileEditValidatedForm = new FormValidation(validationData, popupFormEdi
 
 
 function closePopupOverlayHandler(evt) {
-    if (evt.target === evt.currentTarget) {
+    if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__close')) {
         closePopup(evt.currentTarget);
     };
 };
@@ -80,12 +76,14 @@ function handleSubmitEditProfile(evt) {
     closePopup(popupEditProfile);
 };
 
-function renderCard(Data) {
-    const newCard = new Card(Data, '#place');
-    const createdCard = newCard.createCardElem();
+function createCard(data) {
+    const newPlaceCard = new Card(data, '#place').createCardElem(); 
+    return newPlaceCard;
+};
 
-    placesContainer.prepend(createdCard);
-}
+function renderCard(data) {
+    placesContainer.prepend(createCard(data));
+};
 
 initialCards.forEach((item) => {
     renderCard(item);
@@ -115,11 +113,6 @@ buttonEditProfileOpen.addEventListener('click', () => {
     inputName.value = profileName.textContent;
     inputJob.value = profilejob.textContent;
 });
-
-//События для закрытия поп-апов
-buttonPopupEditProfileClose.addEventListener('click', () => closePopup(popupEditProfile));
-buttonPopupAddCardClose.addEventListener('click', () => closePopup(popupAddCard));
-buttonPopupIllustrationClose.addEventListener('click', () => closePopup(popupIllustration));
 
 //События сабмита форм редактирования и добавление карточки
 popupFormEditProfile.addEventListener('submit', handleSubmitEditProfile);
